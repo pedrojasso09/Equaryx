@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Equaryx | Digital Solutions</title>
+  <meta name="description" content="Plataformas tecnológicas escalables para optimizar movilidad y gestión operativa." />
+  <style>
+    :root{
+      --bg:#070A12; --card:#0C1222; --text:#EAF0FF; --muted:#B7C2E3;
+      --line:rgba(255,255,255,.10); --g1:#00B7FF; --g2:#6B2BFF;
+      --radius:18px; --shadow:0 20px 60px rgba(0,0,0,.45);
+      --max:1120px; --pad:22px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:var(--font); color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(0,183,255,.25), transparent 60%),
+        radial-gradient(900px 500px at 90% 0%, rgba(107,43,255,.22), transparent 55%),
+        var(--bg);
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 70px}
+    header{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(7,10,18,.82), rgba(7,10,18,.35));
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      max-width:var(--max); margin:0 auto; padding:14px 18px;
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+    }
+    .brand{display:flex; align-items:center; gap:10px; text-decoration:none}
+    .brand img{width:38px; height:38px; object-fit:contain}
+    .brand b{letter-spacing:.06em}
+    .nav .links{display:flex; gap:14px; flex-wrap:wrap}
+    .nav .links a{opacity:.85; text-decoration:none; font-size:14px}
+    .nav .links a:hover{opacity:1}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 16px; border-radius:999px; text-decoration:none;
+      border:1px solid var(--line); background: rgba(255,255,255,.04);
+      box-shadow: 0 10px 30px rgba(0,0,0,.25); font-weight:600;
+    }
+    .btn.primary{border:none; background: linear-gradient(135deg, var(--g1), var(--g2)); color:#081022;}
+    .hero{
+      padding:54px 0 10px;
+      display:grid; grid-template-columns: 1.15fr .85fr; gap:22px; align-items:center;
+    }
+    .kicker{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:8px 12px; border:1px solid var(--line);
+      border-radius:999px; background: rgba(255,255,255,.03);
+      color:var(--muted); font-size:13px;
+    }
+    h1{margin:14px 0 10px; font-size:46px; line-height:1.05}
+    p{margin:0; color:var(--muted); line-height:1.6}
+    .cta{margin-top:18px; display:flex; gap:12px; flex-wrap:wrap}
+    .panel{
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border-radius:var(--radius); box-shadow:var(--shadow); padding:18px;
+    }
+    .stat{display:grid; gap:10px}
+    .stat b{font-size:14px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
+    .stat span{font-size:22px}
+    .grid{margin-top:22px; display:grid; grid-template-columns: repeat(12, 1fr); gap:14px;}
+    .card{
+      grid-column: span 6; padding:var(--pad);
+      border-radius:var(--radius); border:1px solid var(--line);
+      background: rgba(12,18,34,.72);
+    }
+    .card h3{margin:0 0 8px; font-size:18px}
+    .card ul{margin:10px 0 0; padding-left:18px; color:var(--muted); line-height:1.7}
+    .full{grid-column: 1 / -1}
+    .third{grid-column: span 4}
+    .muted{color:var(--muted)}
+    .sectionTitle{margin:34px 0 10px; font-size:14px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+    footer{
+      margin-top:36px; padding-top:18px; border-top:1px solid var(--line);
+      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      color:var(--muted); font-size:14px;
+    }
+    @media (max-width: 920px){
+      .hero{grid-template-columns: 1fr; padding-top:34px}
+      h1{font-size:38px}
+      .card{grid-column: 1 / -1}
+      .third{grid-column: 1 / -1}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="#top">
+      <img src="logo.png" alt="Equaryx logo">
+      <div>
+        <b>EQUARYX</b>
+        <div style="font-size:12px;color:rgba(255,255,255,.65);letter-spacing:.12em;">DIGITAL SOLUTIONS</div>
+      </div>
+    </a>
+    <nav class="links">
+      <a href="#identidad">Identidad</a>
+      <a href="#valor">Valor</a>
+      <a href="#modelo">Modelo</a>
+      <a href="#objetivos">Objetivos</a>
+      <a href="#kpis">KPIs</a>
+      <a class="btn" href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top" class="wrap">
+  <section class="hero">
+    <div>
+      <div class="kicker">Houston, TX · Proveedores de tecnología</div>
+      <h1>Transformamos complejidad operativa en
+        <span style="background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; color:transparent;">
+          plataformas digitales escalables
+        </span>.
+      </h1>
+      <p>Creamos soluciones confiables, adaptables y orientadas a resultados para reducir fricciones, mejorar la toma de decisiones y escalar operaciones de forma ordenada.</p>
+      <div class="cta">
+        <a class="btn primary" href="#contacto">Agendar demo</a>
+        <a class="btn" href="#valor">Ver propuesta de valor</a>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="stat"><b>Enfoque</b><span>Plataformas especializadas (SaaS)</span></div>
+      <div style="height:10px"></div>
+      <div class="stat"><b>Beneficios</b><span>Eficiencia · Escalabilidad · Control de costos</span></div>
+      <div style="height:10px"></div>
+      <div class="stat"><b>Diferenciador</b><span>Flexibilidad + réplica + evolución continua</span></div>
+    </div>
+  </section>
+
+  <div class="sectionTitle" id="identidad">Identidad estratégica</div>
+  <section class="grid">
+    <div class="card third"><h3>Propósito (Why)</h3><p>Transformar procesos operativos complejos en soluciones digitales eficientes.</p></div>
+    <div class="card third"><h3>Misión</h3><p>Desarrollar, operar y comercializar plataformas tecnológicas escalables que optimicen la operación.</p></div>
+    <div class="card third"><h3>Visión</h3><p>Ser referencia en plataformas digitales especializadas con presencia en EE. UU. y alto potencial de réplica.</p></div>
+  </section>
+
+  <div class="sectionTitle" id="valor">Propuesta de valor</div>
+  <section class="grid">
+    <div class="card">
+      <h3>Lo que entregamos</h3>
+      <ul>
+        <li>Eficiencia operativa y reducción de fricciones.</li>
+        <li>Escalabilidad con costos marginales decrecientes.</li>
+        <li>Reducción de costos ocultos y mejora en la toma de decisiones.</li>
+        <li>Adaptación y evolución continua del producto.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Por qué Equaryx</h3>
+      <ul>
+        <li>Posicionamiento “punto medio”: robustez + flexibilidad + control de costos.</li>
+        <li>Activos tecnológicos y know-how acumulado.</li>
+        <li>Modelo replicable, licenciado y expandible por módulos.</li>
+        <li>Enfoque en resultados y operación real.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="sectionTitle" id="modelo">Modelo de negocio</div>
+  <section class="grid">
+    <div class="card full">
+      <h3>SaaS + licenciamiento + expansión</h3>
+      <ul>
+        <li>Licenciamiento de plataforma y servicios recurrentes.</li>
+        <li>Desarrollo de funcionalidades adicionales (módulos).</li>
+        <li>Expansión a nuevos verticales y geografías.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="sectionTitle" id="objetivos">Objetivos estratégicos</div>
+  <section class="grid">
+    <div class="card third">
+      <h3>Corto (12 meses)</h3>
+      <ul>
+        <li>Estabilización total de la plataforma.</li>
+        <li>Consolidación de clientes actuales.</li>
+        <li>Formalización de procesos operativos y financieros.</li>
+      </ul>
+    </div>
+    <div class="card third">
+      <h3>Mediano (3 años)</h3>
+      <ul>
+        <li>Expansión comercial en Estados Unidos.</li>
+        <li>Incremento de funcionalidades.</li>
+        <li>Crecimiento de ingresos recurrentes.</li>
+      </ul>
+    </div>
+    <div class="card third">
+      <h3>Largo (5+ años)</h3>
+      <ul>
+        <li>Diversificación de productos.</li>
+        <li>Entrada a nuevos mercados.</li>
+        <li>Preparación para inversión institucional o exit.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="sectionTitle" id="kpis">KPIs</div>
+  <section class="grid">
+    <div class="card">
+      <h3>Indicadores</h3>
+      <ul>
+        <li>Crecimiento de ingresos recurrentes</li>
+        <li>Margen operativo</li>
+        <li>ROI tecnológico</li>
+        <li>Clientes activos</li>
+        <li>CAC</li>
+        <li>Capacidad de escalamiento</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Estructura corporativa</h3>
+      <p class="muted">Equaryx opera como vehículo operativo; Creato Holding LLC como custodio de activos y propiedad intelectual, facilitando escalamiento corporativo.</p>
+    </div>
+  </section>
+
+  <div class="sectionTitle" id="contacto">Contacto</div>
+  <section class="grid">
+    <div class="card full">
+      <h3>Hablemos</h3>
+      <p class="muted">Houston, TX · Proveedores de tecnología</p>
+      <div style="height:12px"></div>
+      <a class="btn primary" href="mailto:contact@equaryx.com">contact@equaryx.com</a>
+      <a class="btn" href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer>
+    <div>© <span id="y"></span> Equaryx LLC</div>
+    <div>Houston, TX · Digital Solutions</div>
+  </footer>
+</main>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
