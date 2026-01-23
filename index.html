@@ -4,110 +4,245 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Equaryx | Digital Solutions</title>
-  <meta name="description" content="Plataformas tecnológicas escalables para optimizar movilidad y gestión operativa." />
+  <meta name="description" content="Plataformas digitales especializadas y escalables. AI-first. Houston, TX." />
+
   <style>
     :root{
-      --bg:#070A12; --card:#0C1222; --text:#EAF0FF; --muted:#B7C2E3;
-      --line:rgba(255,255,255,.10); --g1:#00B7FF; --g2:#6B2BFF;
-      --radius:18px; --shadow:0 20px 60px rgba(0,0,0,.45);
-      --max:1120px; --pad:22px;
+      --bg:#060914;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.035);
+      --line: rgba(255,255,255,.10);
+      --text:#EAF0FF;
+      --muted:#AEB9DF;
+      --g1:#00D1FF;
+      --g2:#6B2BFF;
+      --g3:#00FFA8;
+      --radius:18px;
+      --max:1120px;
+      --shadow: 0 24px 80px rgba(0,0,0,.45);
       --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
     }
+
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
-      margin:0; font-family:var(--font); color:var(--text);
+      margin:0;
+      font-family:var(--font);
+      color:var(--text);
       background:
-        radial-gradient(1200px 600px at 20% -10%, rgba(0,183,255,.25), transparent 60%),
-        radial-gradient(900px 500px at 90% 0%, rgba(107,43,255,.22), transparent 55%),
+        radial-gradient(900px 500px at 15% -10%, rgba(0,209,255,.28), transparent 60%),
+        radial-gradient(800px 460px at 95% 0%, rgba(107,43,255,.26), transparent 55%),
+        radial-gradient(700px 440px at 70% 120%, rgba(0,255,168,.12), transparent 55%),
         var(--bg);
+      overflow-x:hidden;
     }
+
+    /* subtle tech grid */
+    body::before{
+      content:"";
+      position:fixed; inset:0;
+      background:
+        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(60% 50% at 50% 20%, #000 40%, transparent 78%);
+      opacity:.22;
+      pointer-events:none;
+      z-index:-1;
+    }
+
     a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 70px}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 72px}
+
     header{
       position:sticky; top:0; z-index:10;
-      backdrop-filter: blur(10px);
-      background: linear-gradient(to bottom, rgba(7,10,18,.82), rgba(7,10,18,.35));
       border-bottom:1px solid var(--line);
+      background: linear-gradient(to bottom, rgba(6,9,20,.86), rgba(6,9,20,.40));
+      backdrop-filter: blur(10px);
     }
     .nav{
       max-width:var(--max); margin:0 auto; padding:14px 18px;
       display:flex; align-items:center; justify-content:space-between; gap:14px;
     }
-    .brand{display:flex; align-items:center; gap:10px; text-decoration:none}
-    .brand img{width:38px; height:38px; object-fit:contain}
-    .brand b{letter-spacing:.06em}
-    .nav .links{display:flex; gap:14px; flex-wrap:wrap}
-    .nav .links a{opacity:.85; text-decoration:none; font-size:14px}
-    .nav .links a:hover{opacity:1}
+    .brand{display:flex; align-items:center; gap:12px; text-decoration:none}
+    .brand img{width:40px; height:40px; object-fit:contain}
+    .brand b{letter-spacing:.08em}
+    .brand small{display:block; margin-top:2px; letter-spacing:.22em; opacity:.7; font-size:11px}
+    .links{display:flex; gap:14px; flex-wrap:wrap; align-items:center}
+    .links a{opacity:.86; text-decoration:none; font-size:14px}
+    .links a:hover{opacity:1}
+
     .btn{
-      display:inline-flex; align-items:center; justify-content:center;
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
       padding:12px 16px; border-radius:999px; text-decoration:none;
-      border:1px solid var(--line); background: rgba(255,255,255,.04);
-      box-shadow: 0 10px 30px rgba(0,0,0,.25); font-weight:600;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      font-weight:650;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      will-change: transform;
     }
-    .btn.primary{border:none; background: linear-gradient(135deg, var(--g1), var(--g2)); color:#081022;}
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.14)}
+    .btn.primary{
+      border:none;
+      color:#061022;
+      background: linear-gradient(135deg, var(--g1), var(--g2));
+      box-shadow: 0 20px 60px rgba(0,209,255,.10), 0 20px 60px rgba(107,43,255,.10);
+    }
+
     .hero{
-      padding:54px 0 10px;
-      display:grid; grid-template-columns: 1.15fr .85fr; gap:22px; align-items:center;
+      padding:56px 0 10px;
+      display:grid; grid-template-columns: 1.15fr .85fr; gap:18px;
+      align-items:center;
     }
-    .kicker{
-      display:inline-flex; gap:8px; align-items:center;
-      padding:8px 12px; border:1px solid var(--line);
-      border-radius:999px; background: rgba(255,255,255,.03);
-      color:var(--muted); font-size:13px;
+    .pill{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 12px; border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--muted);
+      font-size:13px;
     }
-    h1{margin:14px 0 10px; font-size:46px; line-height:1.05}
-    p{margin:0; color:var(--muted); line-height:1.6}
+    .dot{
+      width:8px; height:8px; border-radius:50%;
+      background: linear-gradient(135deg, var(--g3), var(--g1));
+      box-shadow: 0 0 18px rgba(0,255,168,.25);
+    }
+
+    h1{margin:14px 0 10px; font-size:46px; line-height:1.06; letter-spacing:-.02em}
+    .grad{
+      background: linear-gradient(135deg, var(--g1), var(--g2));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    p{margin:0; color:var(--muted); line-height:1.65}
     .cta{margin-top:18px; display:flex; gap:12px; flex-wrap:wrap}
+
     .panel{
       border:1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-      border-radius:var(--radius); box-shadow:var(--shadow); padding:18px;
+      border-radius:var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      box-shadow: var(--shadow);
+      padding:18px;
+      position:relative;
+      overflow:hidden;
     }
-    .stat{display:grid; gap:10px}
-    .stat b{font-size:14px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
-    .stat span{font-size:22px}
-    .grid{margin-top:22px; display:grid; grid-template-columns: repeat(12, 1fr); gap:14px;}
+    .panel::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(420px 220px at 20% 10%, rgba(0,209,255,.18), transparent 60%),
+                  radial-gradient(420px 220px at 90% 30%, rgba(107,43,255,.18), transparent 60%);
+      opacity:.8;
+      pointer-events:none;
+    }
+    .panel > *{position:relative}
+    .stat{display:grid; gap:8px; padding:10px 0}
+    .stat b{font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,.70)}
+    .stat span{font-size:18px; color:rgba(255,255,255,.92)}
+
+    .sectionTitle{
+      margin:34px 0 10px;
+      font-size:12px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.68);
+    }
+
+    .grid{
+      margin-top:16px;
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+    }
     .card{
-      grid-column: span 6; padding:var(--pad);
-      border-radius:var(--radius); border:1px solid var(--line);
-      background: rgba(12,18,34,.72);
+      grid-column: span 6;
+      padding:22px;
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, var(--card), var(--card2));
+      box-shadow: 0 16px 60px rgba(0,0,0,.28);
     }
-    .card h3{margin:0 0 8px; font-size:18px}
+    .card h3{margin:0 0 8px; font-size:18px; letter-spacing:-.01em}
+    .card p{margin:0}
     .card ul{margin:10px 0 0; padding-left:18px; color:var(--muted); line-height:1.7}
     .full{grid-column: 1 / -1}
     .third{grid-column: span 4}
-    .muted{color:var(--muted)}
-    .sectionTitle{margin:34px 0 10px; font-size:14px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
-    footer{
-      margin-top:36px; padding-top:18px; border-top:1px solid var(--line);
-      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
-      color:var(--muted); font-size:14px;
+    .tagrow{margin-top:12px; display:flex; gap:8px; flex-wrap:wrap}
+    .tag{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:rgba(255,255,255,.75);
     }
-    @media (max-width: 920px){
+
+    .kpi{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:10px;
+      margin-top:10px;
+    }
+    .kpi div{
+      border:1px solid var(--line);
+      border-radius:14px;
+      background: rgba(255,255,255,.03);
+      padding:12px;
+    }
+    .kpi b{
+      display:block;
+      font-size:11px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.68);
+      margin-bottom:6px;
+    }
+    .kpi span{color:rgba(255,255,255,.90); font-size:14px}
+
+    footer{
+      margin-top:40px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      color:rgba(255,255,255,.60);
+      font-size:14px;
+    }
+
+    @media (max-width: 940px){
       .hero{grid-template-columns: 1fr; padding-top:34px}
       h1{font-size:38px}
       .card{grid-column: 1 / -1}
       .third{grid-column: 1 / -1}
+      .kpi{grid-template-columns: 1fr}
+    }
+
+    /* small motion, minimal */
+    @media (prefers-reduced-motion: no-preference){
+      .float{
+        animation: float 6s ease-in-out infinite;
+      }
+      @keyframes float{
+        0%,100%{transform: translateY(0px)}
+        50%{transform: translateY(-6px)}
+      }
     }
   </style>
 </head>
-<body>
 
+<body>
 <header>
   <div class="nav">
     <a class="brand" href="#top">
       <img src="logo.png" alt="Equaryx logo">
       <div>
         <b>EQUARYX</b>
-        <div style="font-size:12px;color:rgba(255,255,255,.65);letter-spacing:.12em;">DIGITAL SOLUTIONS</div>
+        <small>DIGITAL SOLUTIONS</small>
       </div>
     </a>
+
     <nav class="links">
       <a href="#identidad">Identidad</a>
       <a href="#valor">Valor</a>
-      <a href="#modelo">Modelo</a>
-      <a href="#objetivos">Objetivos</a>
+      <a href="#estrategia">Estrategia</a>
       <a href="#kpis">KPIs</a>
       <a class="btn" href="#contacto">Contacto</a>
     </nav>
@@ -115,126 +250,200 @@
 </header>
 
 <main id="top" class="wrap">
+  <!-- HERO -->
   <section class="hero">
     <div>
-      <div class="kicker">Houston, TX · Proveedores de tecnología</div>
-      <h1>Transformamos complejidad operativa en
-        <span style="background:linear-gradient(135deg,var(--g1),var(--g2)); -webkit-background-clip:text; background-clip:text; color:transparent;">
-          plataformas digitales escalables
-        </span>.
-      </h1>
-      <p>Creamos soluciones confiables, adaptables y orientadas a resultados para reducir fricciones, mejorar la toma de decisiones y escalar operaciones de forma ordenada.</p>
+      <div class="pill"><span class="dot"></span>Houston, TX · Technology Providers · AI-first</div>
+      <h1>Convertimos complejidad operativa en <span class="grad">plataformas digitales especializadas</span> que escalan.</h1>
+      <p>
+        Equaryx nace con una vocación clara de crecimiento, escalabilidad y creación de valor:
+        tecnología como medio para generar valor económico, reduciendo fricciones y habilitando decisiones
+        más rápidas y confiables.
+      </p>
+
       <div class="cta">
         <a class="btn primary" href="#contacto">Agendar demo</a>
         <a class="btn" href="#valor">Ver propuesta de valor</a>
       </div>
+
+      <div class="tagrow" aria-label="highlights">
+        <span class="tag">SaaS & Licenciamiento</span>
+        <span class="tag">Replicable</span>
+        <span class="tag">Evolución continua</span>
+        <span class="tag">IA en soluciones</span>
+      </div>
     </div>
 
-    <div class="panel">
-      <div class="stat"><b>Enfoque</b><span>Plataformas especializadas (SaaS)</span></div>
-      <div style="height:10px"></div>
-      <div class="stat"><b>Beneficios</b><span>Eficiencia · Escalabilidad · Control de costos</span></div>
-      <div style="height:10px"></div>
-      <div class="stat"><b>Diferenciador</b><span>Flexibilidad + réplica + evolución continua</span></div>
+    <div class="panel float">
+      <div class="stat">
+        <b>Posicionamiento</b>
+        <span>El “punto intermedio”: robusto + flexible + costo-eficiente</span>
+      </div>
+      <div class="stat">
+        <b>Activos</b>
+        <span>Plataforma desarrollada, funcional y validada en operación real</span>
+      </div>
+      <div class="stat">
+        <b>Escala</b>
+        <span>Costos marginales decrecientes + ingresos recurrentes</span>
+      </div>
     </div>
   </section>
 
+  <!-- IDENTIDAD -->
   <div class="sectionTitle" id="identidad">Identidad estratégica</div>
   <section class="grid">
-    <div class="card third"><h3>Propósito (Why)</h3><p>Transformar procesos operativos complejos en soluciones digitales eficientes.</p></div>
-    <div class="card third"><h3>Misión</h3><p>Desarrollar, operar y comercializar plataformas tecnológicas escalables que optimicen la operación.</p></div>
-    <div class="card third"><h3>Visión</h3><p>Ser referencia en plataformas digitales especializadas con presencia en EE. UU. y alto potencial de réplica.</p></div>
+    <div class="card third">
+      <h3>Propósito</h3>
+      <p>Transformar procesos operativos complejos en soluciones digitales eficientes que reduzcan fricciones, mejoren decisiones y escalen operaciones de forma ordenada.</p>
+    </div>
+    <div class="card third">
+      <h3>Misión</h3>
+      <p>Desarrollar y comercializar plataformas tecnológicas escalables, confiables y adaptables, orientadas a resultados.</p>
+    </div>
+    <div class="card third">
+      <h3>Visión</h3>
+      <p>Consolidarnos en 5 a 10 años como referencia en plataformas digitales especializadas, con presencia en EE. UU. y capacidad de replicar el modelo en diversos sectores.</p>
+    </div>
+
+    <div class="card full">
+      <h3>Contexto de mercado</h3>
+      <p>
+        El mercado de plataformas digitales y SaaS crece, está fragmentado y demanda soluciones especializadas.
+        Equaryx compite donde las plataformas genéricas son costosas/rígidas y los desarrollos a medida no escalan.
+      </p>
+      <div class="tagrow">
+        <span class="tag">Alta fragmentación</span>
+        <span class="tag">Demanda de especialización</span>
+        <span class="tag">Escalabilidad real</span>
+      </div>
+    </div>
   </section>
 
+  <!-- VALOR -->
   <div class="sectionTitle" id="valor">Propuesta de valor</div>
   <section class="grid">
     <div class="card">
-      <h3>Lo que entregamos</h3>
+      <h3>No vendemos solo software</h3>
       <ul>
-        <li>Eficiencia operativa y reducción de fricciones.</li>
-        <li>Escalabilidad con costos marginales decrecientes.</li>
-        <li>Reducción de costos ocultos y mejora en la toma de decisiones.</li>
-        <li>Adaptación y evolución continua del producto.</li>
+        <li>Eficiencia operativa</li>
+        <li>Escalabilidad</li>
+        <li>Reducción de costos ocultos</li>
+        <li>Adaptación tecnológica continua</li>
       </ul>
     </div>
     <div class="card">
-      <h3>Por qué Equaryx</h3>
+      <h3>Modelo de negocio</h3>
       <ul>
-        <li>Posicionamiento “punto medio”: robustez + flexibilidad + control de costos.</li>
-        <li>Activos tecnológicos y know-how acumulado.</li>
-        <li>Modelo replicable, licenciado y expandible por módulos.</li>
-        <li>Enfoque en resultados y operación real.</li>
+        <li>Licenciamiento de plataforma</li>
+        <li>Servicios recurrentes (SaaS)</li>
+        <li>Funcionalidades adicionales (módulos)</li>
+        <li>Expansión a nuevos verticales</li>
       </ul>
+      <div class="tagrow">
+        <span class="tag">Ingresos recurrentes</span>
+        <span class="tag">Margen incremental creciente</span>
+        <span class="tag">Costos marginales decrecientes</span>
+      </div>
     </div>
   </section>
 
-  <div class="sectionTitle" id="modelo">Modelo de negocio</div>
+  <!-- ESTRATEGIA -->
+  <div class="sectionTitle" id="estrategia">Estrategia & hoja de ruta</div>
+  <section class="grid">
+    <div class="card third">
+      <h3>12 meses</h3>
+      <ul>
+        <li>Estabilización total de la plataforma</li>
+        <li>Consolidación de clientes actuales</li>
+        <li>Formalización operativa y financiera</li>
+        <li>Cerrar 2 clientes dedicados</li>
+        <li>Lanzamiento de una plataforma masiva</li>
+        <li>IA en todas las soluciones digitales</li>
+      </ul>
+    </div>
+    <div class="card third">
+      <h3>3 años</h3>
+      <ul>
+        <li>Expansión comercial en Estados Unidos</li>
+        <li>Incremento de funcionalidades</li>
+        <li>Productos autogestionables (iOS, Android, Web)</li>
+        <li>Aumento sostenido de ingresos recurrentes</li>
+      </ul>
+    </div>
+    <div class="card third">
+      <h3>5+ años</h3>
+      <ul>
+        <li>Diversificación de productos</li>
+        <li>Entrada a nuevos mercados</li>
+        <li>Preparación para inversión institucional / exit</li>
+      </ul>
+    </div>
+
+    <div class="card full">
+      <h3>Estrategias clave</h3>
+      <div class="kpi" role="list">
+        <div role="listitem"><b>Tecnología</b><span>Evolución continua de la plataforma</span></div>
+        <div role="listitem"><b>IA</b><span>Implementación transversal en soluciones</span></div>
+        <div role="listitem"><b>Comercial</b><span>Enfoque por nichos específicos</span></div>
+        <div role="listitem"><b>Financiera</b><span>Reinversión inteligente para escalar</span></div>
+        <div role="listitem"><b>Alianzas</b><span>Integración con socios estratégicos</span></div>
+        <div role="listitem"><b>Protección</b><span>Centralización de propiedad intelectual</span></div>
+      </div>
+      <p style="margin-top:12px">
+        Operamos con disciplina estratégica para crecer sin comprometer la estabilidad, anticipando riesgos (innovación constante, cumplimiento y ciberseguridad).
+      </p>
+    </div>
+  </section>
+
+  <!-- ESTRUCTURA / CREADTO -->
+  <div class="sectionTitle">Estructura corporativa</div>
   <section class="grid">
     <div class="card full">
-      <h3>SaaS + licenciamiento + expansión</h3>
-      <ul>
-        <li>Licenciamiento de plataforma y servicios recurrentes.</li>
-        <li>Desarrollo de funcionalidades adicionales (módulos).</li>
-        <li>Expansión a nuevos verticales y geografías.</li>
-      </ul>
+      <h3>Equaryx + Creato Holding LLC</h3>
+      <p>
+        Equaryx opera como vehículo operativo; Creato Holding LLC actúa como custodio de activos y administrador de la propiedad intelectual, habilitando escalamiento corporativo y facilitando la entrada de capital.
+      </p>
+      <div class="tagrow">
+        <span class="tag">IP custody</span>
+        <span class="tag">Risk reduction</span>
+        <span class="tag">Capital readiness</span>
+      </div>
     </div>
   </section>
 
-  <div class="sectionTitle" id="objetivos">Objetivos estratégicos</div>
+  <!-- KPIs -->
+  <div class="sectionTitle" id="kpis">KPIs (disciplina estratégica)</div>
   <section class="grid">
-    <div class="card third">
-      <h3>Corto (12 meses)</h3>
-      <ul>
-        <li>Estabilización total de la plataforma.</li>
-        <li>Consolidación de clientes actuales.</li>
-        <li>Formalización de procesos operativos y financieros.</li>
-      </ul>
-    </div>
-    <div class="card third">
-      <h3>Mediano (3 años)</h3>
-      <ul>
-        <li>Expansión comercial en Estados Unidos.</li>
-        <li>Incremento de funcionalidades.</li>
-        <li>Crecimiento de ingresos recurrentes.</li>
-      </ul>
-    </div>
-    <div class="card third">
-      <h3>Largo (5+ años)</h3>
-      <ul>
-        <li>Diversificación de productos.</li>
-        <li>Entrada a nuevos mercados.</li>
-        <li>Preparación para inversión institucional o exit.</li>
-      </ul>
+    <div class="card full">
+      <h3>Métricas que importan</h3>
+      <div class="kpi">
+        <div><b>Ingresos</b><span>Crecimiento de ingresos recurrentes</span></div>
+        <div><b>Rentabilidad</b><span>Margen operativo</span></div>
+        <div><b>Tech ROI</b><span>Retorno sobre inversión tecnológica</span></div>
+        <div><b>Clientes</b><span>Número de clientes activos</span></div>
+        <div><b>Go-to-market</b><span>Costo de adquisición (CAC)</span></div>
+        <div><b>Escala</b><span>Capacidad de escalamiento</span></div>
+      </div>
+      <p style="margin-top:12px">
+        Estas métricas permiten evaluar desempeño y atractivo para inversión futura.
+      </p>
     </div>
   </section>
 
-  <div class="sectionTitle" id="kpis">KPIs</div>
-  <section class="grid">
-    <div class="card">
-      <h3>Indicadores</h3>
-      <ul>
-        <li>Crecimiento de ingresos recurrentes</li>
-        <li>Margen operativo</li>
-        <li>ROI tecnológico</li>
-        <li>Clientes activos</li>
-        <li>CAC</li>
-        <li>Capacidad de escalamiento</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Estructura corporativa</h3>
-      <p class="muted">Equaryx opera como vehículo operativo; Creato Holding LLC como custodio de activos y propiedad intelectual, facilitando escalamiento corporativo.</p>
-    </div>
-  </section>
-
+  <!-- CONTACTO -->
   <div class="sectionTitle" id="contacto">Contacto</div>
   <section class="grid">
     <div class="card full">
       <h3>Hablemos</h3>
-      <p class="muted">Houston, TX · Proveedores de tecnología</p>
-      <div style="height:12px"></div>
-      <a class="btn primary" href="mailto:contact@equaryx.com">contact@equaryx.com</a>
-      <a class="btn" href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+      <p>Houston, TX · Proveedores de tecnología · Plataformas digitales escalables</p>
+      <div class="cta" style="margin-top:14px">
+        <a class="btn primary" href="mailto:contact@equaryx.com">contact@equaryx.com</a>
+        <a class="btn" href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+      <p style="margin-top:12px; font-size:13px; opacity:.8">
+        *Cambia el email y LinkedIn por los reales y listo.*
+      </p>
     </div>
   </section>
 
